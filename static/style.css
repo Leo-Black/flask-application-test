@@ -1,0 +1,65 @@
+/* The font stuff is being weird*/
+/* Allows the use of the typeface Lora */
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat:300,500&display=swap');
+body {
+	/* Sets the website's width */
+	width: 720px;
+	/* Pushes everything 10 pixels to the right */
+	padding-left: 10px;
+	background-image: url("background.png");
+	background-size: 1920px;
+	font-family: 'Montserrat', light;
+	color: #027E71;
+}
+/* Modifies the title and subtitle */
+#header {
+	width: 1600px;
+	font-size: 28px;
+	line-height: 20px;
+}
+h1 {
+	font-family: 'Montserrat', medium;
+}
+h2 {
+	font-family: 'Bebas Neue';
+}
+#nav {
+	/* Edits the curvature of the border */
+	border-radius: 10px;
+	/* Sets the nav bar's border style to dashed lines */
+	border-style: dashed;
+	border-color: #027E71;
+	width: 520px;
+	padding: 5px;
+	font-size: 40px;
+	/* Centres the nav bar */
+	text-align: center;
+	margin: 0 auto;
+}
+/* Links */
+a {
+	color: #027E71;
+}
+/* Puts the Python logo to the left of the nav bar */
+img {
+	position: absolute;
+	margin: -90px auto;
+}
+/* Sets the body text's size, leading and colour */
+#content {
+	font-family: 'Montserrat', light;
+	color: #FFFFFF;
+	font-size: 18px;
+	line-height: 23px;
+}
+/* Adjusts the footer's border, width, text size and position */
+#footer {
+	border-style: dashed;
+	border-radius: 10px;
+	width: 230px;
+	/* Places the border just below the bottom of the screen */
+	position: absolute;
+	bottom: 10px;
+	padding: 5px;
+	font-size: 25px;
+}
