@@ -6,7 +6,7 @@ body {
 	/* Pushes everything 10 pixels to the right */
 	padding-left: 10px;
 	background-image: url("background.png");
-	background-size: cover;
+	background-size: 1920px;
 	font-family: 'Montserrat', light;
 	color: #027E71;
 }
