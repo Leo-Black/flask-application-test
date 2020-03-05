@@ -28,6 +28,10 @@
 				{{ i[0] }}: {{ i[1] }} <br>
                 {% endfor %}
 			</p>
+			<form action="/add" method="POST">
+				<input type="text" name="item_name">
+				<input type="submit" value="Add To Database">
+			</form>
 		</div>
 		<div id="footer">
 			<!-- &copy is the copyright symbol-->

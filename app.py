@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, g
+from flask import Flask, g, redirect, render_template, request
 
 app = Flask(__name__)
 database = 'database.db'
@@ -25,6 +25,16 @@ def data():
     cursor.execute(sql_query)
     result = cursor.fetchall()
     return render_template('data.html', result=result)
+
+@app.route('/add', methods=["GET", "POST"])
+def add():
+    if request.method == 'POST':
+        cursor = get_database().cursor()
+        new_name = request.form['item_name']
+        sql_query = 'INSERT INTO test_table(name) VALUES (?)'
+        cursor.execute(sql_query, (new_name,))
+        get_database().commit()
+    return redirect('/data')
 
 @app.teardown_appcontext
 def close_connection(exception):
