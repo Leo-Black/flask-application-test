@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-	<!-- Sets up the basic stuff, like the UTF character set, width and compatibility-->
+	<!-- Sets up the basics, like the UTF character set, screen width and compatibility -->
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<!-- This is what's seen on the website's tab-->
+		<!-- This is what's seen on the website's tab -->
 		<title>A Website</title>
-		<!-- Links to the CSS code-->
+		<!-- Finds style.css in the folder static and sets it as the stylesheet -->
 		<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 	<body>
-		<!-- Sets the title and subtitle-->
+		<!-- Sets the title and subtitle -->
 		<div id="header">
 			<h1>Conical McFlask</h1>
 			<h2>By Leo Black</h2>
 		</div>
-		<!-- Allows the user to click on the text to go to the other pages-->
+		<!-- Allows the user to click on the text to go to the other pages -->
 		<div id="nav">
 			<a href="{{ url_for('home') }}">Home</a> | <a href="{{ url_for('index') }}">Index</a> | <a href="{{ url_for('data') }}">Database</a>
 		</div>
 		<div id="content">
-			<!-- Sets the body text-->
+			<!-- Sets the body text -->
 			<br> Welcome to this website. <br>
 			Here's what's in the database: <br> <br>
+			<!-- Creates a for loop listing the items in test-table -->
 			{% for item in range(length) %}
 			{{ item+1 }}: {{ result[item][1] }} <br>
+			<!-- Adds a delete button for each item to remove it from the database -->
 			<form action="/delete" method="POST">
 				<input type="hidden" name="item_name" value="{{ result[item][0] }}">
 				<input type="submit" value="delete">
 			</form>
+			<!-- Ends the for loop -->
 			{% endfor %}
+			<!-- Adds a text box and a submit button to add items into the database -->
 			<form action="/add" method="POST">
 				<input type="text" name="item_name">
 				<input type="submit" value="Add To Database">

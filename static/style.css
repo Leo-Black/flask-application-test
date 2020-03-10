@@ -1,10 +1,11 @@
-/* Allows the use of the typeface Lora */
+/* Allows the use of the typefaces Bebas Neue and Montserrat */
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat:300,500&display=swap');
 body {
 	/* Sets the website's width */
 	width: 720px;
 	/* Pushes everything 10 pixels to the right */
 	padding-left: 10px;
+	/* Sets the background and its size */
 	background-image: url("background.png");
 	background-size: 1920px;
 	font-family: 'Montserrat', light;
@@ -16,9 +17,11 @@ body {
 	font-size: 28px;
 	line-height: 20px;
 }
+/* Sets the font of the title */
 h1 {
 	font-family: 'Montserrat', medium;
 }
+/* Sets the font of the subtitle */
 h2 {
 	font-family: 'Bebas Neue';
 }
@@ -35,14 +38,9 @@ h2 {
 	text-align: center;
 	margin: 0 auto;
 }
-/* Links */
+/* Sets the colour of the links */
 a {
 	color: #027E71;
-}
-/* Puts the Python logo to the left of the nav bar */
-img {
-	position: absolute;
-	margin: -90px auto;
 }
 /* Sets the body text's size, leading and colour */
 #content {
@@ -56,7 +54,7 @@ img {
 	border-style: dashed;
 	border-radius: 10px;
 	width: 230px;
-	/* Places the border just below the bottom of the screen */
+	/* Places the border just above the bottom of the screen */
 	position: absolute;
 	bottom: 10px;
 	padding: 5px;
