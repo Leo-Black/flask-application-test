@@ -21,13 +21,15 @@
 		</div>
 		<div id="content">
 			<!-- Sets the body text-->
-			<p>
-                Welcome to this website. <br>
-                Here's what's in the database: <br>
-				{% for i in result %}
-				{{ i[0] }}: {{ i[1] }} <br>
-                {% endfor %}
-			</p>
+			<br> Welcome to this website. <br>
+			Here's what's in the database: <br> <br>
+			{% for item in range(length) %}
+			{{ item+1 }}: {{ result[item][1] }} <br>
+			<form action="/delete" method="POST">
+				<input type="hidden" name="item_name" value="{{ result[item][0] }}">
+				<input type="submit" value="delete">
+			</form>
+			{% endfor %}
 			<form action="/add" method="POST">
 				<input type="text" name="item_name">
 				<input type="submit" value="Add To Database">

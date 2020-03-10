@@ -24,7 +24,7 @@ def data():
     sql_query = 'SELECT * FROM test_table'
     cursor.execute(sql_query)
     result = cursor.fetchall()
-    return render_template('data.html', result=result)
+    return render_template('data.html', result=result, length=len(result))
 
 @app.route('/add', methods=["GET", "POST"])
 def add():
@@ -33,6 +33,16 @@ def add():
         new_name = request.form['item_name']
         sql_query = 'INSERT INTO test_table(name) VALUES (?)'
         cursor.execute(sql_query, (new_name,))
+        get_database().commit()
+    return redirect('/data')
+
+@app.route('/delete', methods=["GET", "POST"])
+def delete():
+    if request.method == 'POST':
+        cursor = get_database().cursor()
+        id = int(request.form['item_name'])
+        sql_query = 'DELETE FROM test_table WHERE id=?'
+        cursor.execute(sql_query, (id,))
         get_database().commit()
     return redirect('/data')
 
